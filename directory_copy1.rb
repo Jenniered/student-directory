@@ -23,12 +23,12 @@ def print_header
 end
 
 def print_names(students)
-  index = 0
-  while index < students.length do
-   puts students[index][:name]
-  index += 1
+  students.each do |student|
+  puts "#{student[:name]} (#{student[:cohort]} cohort)".center(40)
   end
 end
+# center pads either side, so makes the string 40 in width and puts text in the center
+# ljust and rjust can be used similarly
 
 #{students[index][:name]} 
 
