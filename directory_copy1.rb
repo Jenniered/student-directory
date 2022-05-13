@@ -5,13 +5,16 @@ def input_students
 students = []
 #get the first name
 name = gets.chomp
+ puts "What's your country of birth?"
+    country = gets.chomp
 #while the name is not empty, repeat this code
-  while !name.empty? do
+  while !name.empty? && !country.empty? do
 #add the student hash to the array
-    students << {name: name, cohort: :november}
+    students << {name: name, cohort: :november, country: country}
     puts "Now we have #{students.count} students"
 #get another name from the user
     name = gets.chomp
+    country = gets.chomp
   end
 #return the array of students
 students
@@ -24,11 +27,11 @@ end
 
 def print_names(students)
   students.each do |student|
-  puts "#{student[:name]} (#{student[:cohort]} cohort)".center(40)
+  puts "#{student[:name]}, #{student[:country]} (#{student[:cohort]} cohort)"
   end
 end
-# center pads either side, so makes the string 40 in width and puts text in the center
-# ljust and rjust can be used similarly
+
+
 
 #{students[index][:name]} 
 
