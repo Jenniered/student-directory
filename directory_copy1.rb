@@ -8,7 +8,11 @@ name = gets.chomp
 #while the name is not empty, repeat this code
   while !name.empty? do
 #add the student hash to the array
-    students << {name: name, cohort: :november}
+    puts "Which cohort?"
+    cohort = gets.chomp
+    puts "Country of birth?"
+    country = gets.chomp
+    students << {name: name, cohort: cohort, country: country}
     if students.count == 1
       puts "Now we have #{students.count} student"
     else
@@ -28,7 +32,7 @@ end
 
 def print_names(students)
   students.each do |student|
-  puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  puts "#{student[:name]}, #{student[:country]} (#{student[:cohort]} cohort)"
   end
 end
 
