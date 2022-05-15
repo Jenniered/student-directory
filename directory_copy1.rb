@@ -4,14 +4,14 @@ def input_students
 #create an empty array
 students = []
 #get the first name
-name = gets.chomp
+name = gets.rstrip
 #while the name is not empty, repeat this code
   while !name.empty? do
 #add the student hash to the array
     puts "Which cohort?"
-    cohort = gets.chomp
+    cohort = gets.chomp.to_sym
     puts "Country of birth?"
-    country = gets.chomp
+    country = gets.chomp.to_sym
     if country.empty?
       country = "unknown"
     end
@@ -22,7 +22,7 @@ name = gets.chomp
     puts "Now we have #{students.count} students"
     end
 #get another name from the user
-    name = gets.chomp
+    name = gets.rstrip
   end
 #return the array of students
 students
@@ -34,8 +34,8 @@ def print_header
 end
 
 def print_names(students)
-  students.each do |student|
-  puts "#{student[:name]}, #{student[:country]} (#{student[:cohort]} cohort)"
+  students.each do |student| 
+    puts "#{student[:name]}, #{student[:country]} (#{student[:cohort]} cohort)"
   end
 end
 
