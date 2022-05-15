@@ -28,9 +28,13 @@ name = gets.rstrip
 students
 end
 
-def print_header
+def print_header(names)
+  if names.count >= 1
   puts "The students of Villains Academy"
   puts "-------------"
+  else
+  puts "No students entered"
+  end
 end
 
 def print_names(students)
@@ -40,12 +44,15 @@ def print_names(students)
 end
 
 def print_footer(names)
+  if names.count > 0
   puts "Overall, we have #{names.count} great students"
+  else
+  end
 end
 
 #nothing happens until we call the methods
 students = input_students
-print_header
+print_header(students)
 print_names(students)
 print_footer(students)
 
