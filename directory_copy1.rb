@@ -12,6 +12,9 @@ name = gets.chomp
     cohort = gets.chomp
     puts "Country of birth?"
     country = gets.chomp
+    if country.empty?
+      country = "unknown"
+    end
     students << {name: name, cohort: cohort, country: country}
     if students.count == 1
       puts "Now we have #{students.count} student"
